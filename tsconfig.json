@@ -1,0 +1,18 @@
+{
+    "files": [],
+    "references": [
+        { "path": "./tsconfig.app.json" },
+        { "path": "./tsconfig.node.json" }
+    ],
+    "esModuleInterop": true,
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "allowImportingTsExtensions": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/game/*": ["game/*"],
+            "@/*": ["src/*"]
+        }
+    },
+    "resolveJsonModule": true
+}

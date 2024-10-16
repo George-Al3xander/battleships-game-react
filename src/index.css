@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "Overpass", sans-serif;
+        font-weight: 400 900;
+        font-style: normal;
+        font-display: optional;
+        src: url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap")
+            format("woff2");
+    }
+
+    .cell-base-class {
+        @apply size-7 sm:size-10 md:size-12
+    }
+
+    .cell-action-base-class {
+        @apply size-3 sm:size-4 rounded-full
+    }
+
+    .cell-done-action-base-class {
+        @apply scale-125
+    }
+
+    .cell-action-parent {
+        @apply relative after:content-[''] after:absolute after:inset-0 after:size-3 after:sm:size-4 after:bg-gray-500 after:rounded-full after:m-auto after:transition-all
+    }
+}
+
+#btn-start {
+    grid-area: start;
+}
+
+#btn-random {
+    grid-area: random;
+}
+
+#btn-reset {
+    grid-area: reset;
+}
+
+.setup-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+            "start random"
+            "reset reset";
+}
+
+@media (min-width: 640px) {
+    .setup-btns {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "start random reset"
+
+    }
+}
+
+.vert-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+main {
+    padding-bottom: 6rem;
+    width: 90%;
+    margin-inline: auto;
+}
